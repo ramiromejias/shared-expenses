@@ -30,6 +30,7 @@ const ConfirmEmailScreen = () => {
         <CustomInput
           name="code"
           placeholder="Confirmation code"
+          keyboardType="number-pad"
           control={control}
           rules={{
             required: 'Confirmation code is required',

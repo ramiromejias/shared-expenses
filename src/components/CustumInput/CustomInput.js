@@ -8,12 +8,16 @@ const CustomInput = ({
   rules = {},
   placeholder,
   secureTextEntry,
+  keyboardType,
+  autoCapitalize,
 }) => {
   return (
     <Controller
       control={control}
       name={name}
       rules={rules}
+      keyboardType={keyboardType}
+      autoCapitalize={autoCapitalize}
       render={({field: {value, onChange, onBlur}, fieldState: {error}}) => (
         <>
           <View
@@ -25,10 +29,12 @@ const CustomInput = ({
               value={value}
               onChangeText={onChange}
               onBlur={onBlur}
+              autoCapitalize={autoCapitalize ? autoCapitalize : 'none'}
               placeholder={placeholder}
               placeholderTextColor={'grey'}
               style={styles.input}
               secureTextEntry={secureTextEntry}
+              keyboardType={keyboardType}
             />
           </View>
           {error && (

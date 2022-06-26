@@ -28,6 +28,7 @@ const NewPasswordScreen = () => {
         <CustomInput
           name="code"
           placeholder="Code"
+          keyboardType="number-pad"
           control={control}
           rules={{
             required: 'Code is required',

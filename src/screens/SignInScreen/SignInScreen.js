@@ -5,6 +5,7 @@ import {
   StyleSheet,
   useWindowDimensions,
   ScrollView,
+  Text,
 } from 'react-native';
 import Logo from '../../../assets/images/SharedExpenses.png';
 import CustomInput from '../../components/CustumInput/CustomInput';
@@ -61,6 +62,7 @@ const SignInScreen = () => {
         <CustomInput
           name="email"
           placeholder="Email"
+          keyboardType="email-address"
           control={control}
           rules={{required: 'Email is required'}}
         />
@@ -84,17 +86,15 @@ const SignInScreen = () => {
           onPress={handleSubmit(onSignInPressed)}
         />
 
-        <CustomButton
-          text="Forgot Password?"
-          onPress={onForgotPasswordPressed}
-          type="TERTIARY"
-        />
-
-        <CustomButton
-          text="Don't have an account? Create one"
-          onPress={onSignUpPressed}
-          type="TERTIARY"
-        />
+        <Text style={styles.text}>
+          <Text style={styles.link} onPress={onForgotPasswordPressed}>
+            Recover password
+          </Text>
+          {'  '}|{'  '}
+          <Text style={styles.link} onPress={onSignUpPressed}>
+            Create an account
+          </Text>
+        </Text>
       </View>
     </ScrollView>
   );
@@ -109,6 +109,15 @@ const styles = StyleSheet.create({
     width: '70%',
     maxWidth: 300,
     maxHeight: 200,
+    marginBottom: 30,
+  },
+  text: {
+    color: 'gray',
+    marginVertical: 10,
+  },
+  link: {
+    color: 'gray',
+    fontWeight: 'bold',
   },
 });
 

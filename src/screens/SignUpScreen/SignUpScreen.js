@@ -39,6 +39,7 @@ const SignUpScreen = () => {
         <CustomInput
           name="name"
           placeholder="Full name"
+          autoCapitalize="words"
           control={control}
           rules={{
             required: 'Full name is required',
@@ -56,6 +57,7 @@ const SignUpScreen = () => {
         <CustomInput
           name="email"
           placeholder="Email"
+          keyboardType="email-address"
           control={control}
           rules={{
             required: 'Email is required',
@@ -131,6 +133,7 @@ const styles = StyleSheet.create({
   },
   link: {
     color: '#FDB075',
+    fontWeight: 'bold',
   },
 });
 
