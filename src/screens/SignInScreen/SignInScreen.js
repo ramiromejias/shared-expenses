@@ -59,6 +59,8 @@ const SignInScreen = () => {
           resizeMode="contain"
         />
 
+        <Text style={styles.apptitle}>Shared Expenses</Text>
+
         <CustomInput
           name="email"
           placeholder="Email"
@@ -118,6 +120,12 @@ const styles = StyleSheet.create({
   link: {
     color: 'gray',
     fontWeight: 'bold',
+  },
+  apptitle: {
+    color: '#3B71F3',
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginBottom: 15,
   },
 });
 
