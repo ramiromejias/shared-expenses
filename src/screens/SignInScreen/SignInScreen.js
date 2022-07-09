@@ -13,6 +13,9 @@ import CustomButton from '../../components/CustomButton/CustomButton';
 import {useNavigation} from '@react-navigation/native';
 import {useForm} from 'react-hook-form';
 
+const EMAIL_REGEX =
+  /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
 const SignInScreen = () => {
   const {height} = useWindowDimensions();
 
@@ -66,7 +69,10 @@ const SignInScreen = () => {
           placeholder="Email"
           keyboardType="email-address"
           control={control}
-          rules={{required: 'Email is required'}}
+          rules={{
+            required: 'Email is required',
+            pattern: {value: EMAIL_REGEX, message: 'Email is invalid'},
+          }}
         />
 
         <CustomInput
